@@ -1,0 +1,49 @@
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subir Archivo</title>
+</head>
+<body>
+  <form id="upload-form" action="" method="" enctype="multipart/form-data">
+    <label for="file-upload" class="custom-file-upload">
+      <i class="fas fa-cloud-upload-alt"></i>Seleccionar fichero
+    </label>
+    <input id="file-upload" type="file" name="file" />
+    <input type="text" id="title" placeholder="Campo de texto 1" />
+    <input type="text" id="author" placeholder="Campo de texto 2" />
+    <textarea  id="description"></textarea>
+    <input type="submit" value="Subir fichero" />
+  </form>
+  <script src="../subir.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subir Archivo</title>
+</head>
+<body>
+  <form id="upload-form" action="" method="POST" enctype="multipart/form-data">
+    <label for="file-upload" class="custom-file-upload">
+      <i class="fas fa-cloud-upload-alt"></i>Seleccionar fichero
+    </label>
+    <input id="file-upload" type="file" name="file" />
+    
+    <label for="photo-upload" class="custom-file-upload">
+      <i class="fas fa-cloud-upload-alt"></i>Seleccionar foto
+    </label>
+    <input id="photo-upload" type="file" name="photo" />
+    
+    <input type="text" id="title" placeholder="Titulo" />
+    <input type="text" id="author" placeholder="Autor" />
+    <textarea id="description" placeholder="descripcion"></textarea>
+    <input type="submit" value="Subir fichero" />
+  </form>
+  <script src="../subir.js"></script>
+</body>
+</html>
+
