@@ -1,9 +1,9 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
 
-const sequelize = new Sequelize("libros_prueba", "root", "root",{
-    host: "localhost",
+const sequelize = new Sequelize("railway", "root", "rOkreaZdbzbFIXVKJjrERCQHdyGheHPS",{
+    host: "junction.proxy.rlwy.net",
     dialect: "mysql",
-    port: 3306
+    port: 29346
 } )
 
 export class User extends Model {}

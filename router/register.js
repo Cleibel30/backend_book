@@ -18,6 +18,8 @@ registerApp.post("/", [
         return res.json({ ok: false, status: 406, body: errors.array() })
     }
 
+    await User.sync()
+
     if(!req.body) return res.json({ ok: false, status: 406, body: null, message: "Debes llenar todos los datos"})
 
     const { user_name, email, password } = req.body
@@ -73,6 +75,9 @@ registerApp.post("/admin", [
     if (!errors.isEmpty()) {
         return res.json({ ok: false, status: 406, body: errors.array() })
     }
+
+    await Admin.sync()
+
     const { user_name, email, password, password_admin } = req.body
 
     // if (!validationRegister(user_name, email, password)) return res.status(406).json({ ok: false, status: 406, body: null, message: "Asegúrese de que tiene el formato correcto (ejemplo@dominio.com). La contraseña no es válida. Debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una letra minúscula, un número y un carácter especial. El nombre de usuario mínimo debe tener 3 caracteres y máximo 20" })
@@ -96,8 +101,6 @@ registerApp.post("/admin", [
     if ("sisiato24" != password_admin) return res.json({ ok: false, status: 401, body: null, message: "Datos incorrectos" })
 
     const pass = await hashPassword(password, 10)
-
-    await Admin.sync()
 
     try {
         const createAdmin = await Admin.create({
