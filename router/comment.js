@@ -6,6 +6,8 @@ const commentApp = Router()
 
 commentApp.post("/", async (req, res) => {
 
+    await Comment.sync()
+
     const { book_id, comment } = req.body
 
 
@@ -28,7 +30,6 @@ commentApp.post("/", async (req, res) => {
         req.user = decoded;
     });
 
-    console.log(req.user)
 
     const { email, admin, user_id } = req.user
 
@@ -41,8 +42,6 @@ commentApp.post("/", async (req, res) => {
     })
 
     if (!user) return res.json({ ok: false, status: 400, body: error, message: "Usuario no encontrado" })
-
-    await Comment.sync()
 
     try {
         const createComment = await Comment.create({
