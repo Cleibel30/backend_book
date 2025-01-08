@@ -43,6 +43,9 @@ commentApp.post("/", async (req, res) => {
 
     if (!user) return res.json({ ok: false, status: 400, body: error, message: "Usuario no encontrado" })
 
+
+    console.log(comment, book_id)
+
     try {
         const createComment = await Comment.create({
             book_id: book_id,
@@ -64,6 +67,8 @@ commentApp.post("/", async (req, res) => {
             message: "error al crear el comentario"
         })
     }
+
+
 })
 
 export default commentApp

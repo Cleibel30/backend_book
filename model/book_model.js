@@ -112,7 +112,7 @@ Comment.init({
         allowNull: false
     },
     user_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.UUID,
         allowNull: false
     },
     comment: {
@@ -131,11 +131,11 @@ Like.init({
         primaryKey: true
     },
     book_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.UUID,
         allowNull: false
     },
     user_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.UUID,
         allowNull: false
     },
 
